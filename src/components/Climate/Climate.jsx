@@ -1,16 +1,17 @@
 import { useState } from "react";
 import "./Climate.css";
 
-export const Climate = ({ climate }) => {
-  console.log(climate.climate.temperature);
-  const [temp, setTemp] = useState(climate.climate.temperature);
+export const Climate = ({ temperature, humidity }) => {
+  const [temp, setTemp] = useState(temperature);
 
   const upHandler = () => {
     setTemp(temp + 1);
   };
+
   const downHandler = () => {
     setTemp(temp - 1);
   };
+
   return (
     <div className="climate">
       <div className="climate__icon">
@@ -19,7 +20,7 @@ export const Climate = ({ climate }) => {
       <div className="climate__content">
         <div className="climate__temperature">{temp}&deg;C</div>
         <div className="climate__humidity">
-          Vlhost vzduchu {climate.climate.humidity}&nbsp;%
+          Vlhost vzduchu {humidity}&nbsp;%
         </div>
       </div>
       <div className="climate__controls">

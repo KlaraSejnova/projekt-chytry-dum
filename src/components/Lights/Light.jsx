@@ -1,27 +1,25 @@
 import { useState } from "react";
 
-export const Light = ({ light }) => {
-  const [state, setState] = useState(light.state);
+export const Light = ({ state, name }) => {
+  const [status, setState] = useState(state);
 
   const clickHandler = () => {
-    state == "on" ? setState("off") : setState("on");
+    status == "on" ? setState("off") : setState("on");
   };
 
   return (
-    <>
-      <div className="light" onClick={clickHandler}>
-        <div className="light__icon" key={light.name}>
-          <img
-            src={
-              state == "on"
-                ? "../Assets/light-on.svg"
-                : "../Assets/light-off.svg"
-            }
-          />
-        </div>
-        <div className="light__name">{light.name}</div>
+    <div className="light" key={name} onClick={clickHandler}>
+      <div className="light__icon">
+        <img
+          src={
+            status == "on"
+              ? "../Assets/light-on.svg"
+              : "../Assets/light-off.svg"
+          }
+        />
       </div>
-    </>
+      <div className="light__name">{name}</div>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import "./Energy.css";
 
-export const Energy = ({ energy }) => {
+export const Energy = ({ electricity, water }) => {
   return (
     <div className="energy">
       <div className="energy__source">
@@ -9,9 +9,7 @@ export const Energy = ({ energy }) => {
         </div>
         <div className="energy__consumption">
           <div className="energy__description">Elektřina</div>
-          <div className="energy__value">
-            {energy.energyConsumption.electricity} kW
-          </div>
+          <div className="energy__value">{electricity} kW</div>
         </div>
       </div>
       <div className="energy__source">
@@ -21,7 +19,7 @@ export const Energy = ({ energy }) => {
         <div className="energy__consumption">
           <div className="energy__description">Voda</div>
           <div className="energy__value">
-            {energy.energyConsumption.water} m<sup>3</sup>
+            {water} m<sup>3</sup>
           </div>
         </div>
       </div>

@@ -8,9 +8,15 @@ export const Dashboard = ({ data }) => {
   return (
     <main className="dashboard">
       <Lights lights={data}></Lights>
-      <Climate climate={data}></Climate>
-      <Blinds data={data}></Blinds>
-      <Energy energy={data}></Energy>
+      <Climate
+        temperature={data.climate.temperature}
+        humidity={data.climate.humidity}
+      ></Climate>
+      <Blinds state={data.blinds}></Blinds>
+      <Energy
+        energy={data.energyConsumption.electricity}
+        water={data.energyConsumption.water}
+      ></Energy>
     </main>
   );
 };

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Blinds.css";
 
-export const Blinds = ({ data }) => {
-  const [open, setOpen] = useState(data.blinds);
+export const Blinds = ({ state }) => {
+  const [open, setOpen] = useState(state);
   const clickHandler = () => {
     open == "open" ? setOpen("off") : setOpen("open");
   };
